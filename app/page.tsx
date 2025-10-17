@@ -1,103 +1,328 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import { useState } from 'react';
+import Image from 'next/image';
+import {
+  Section,
+  Container,
+  Grid,
+  ContentNarrow,
+  SectionHeading,
+  BrandHeading,
+  ImpactNumber,
+  CardLabel,
+  CardTitle,
+  CardText,
+  ArticleLabel,
+  ArticleTitle,
+  BodyTextSmall,
+  ButtonPrimary,
+  ButtonSecondary,
+  LinkUnderlineWhite,
+  LinkUnderlineAccent,
+  LinkUnderlineBlue,
+  LinkUnderlineBlackAccent,
+  ImageCard,
+  ArticleCard,
+  InsightCard,
+} from '@/components/ui';
+
+export default function HomePage() {
+  
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <>
+      {/* Hero Section */}
+      <section className="relative h-screen flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&q=90"
+            alt="Business skyline"
+            fill
+            className="object-cover"
           priority
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div className="absolute inset-0 hero-gradient-overlay z-10" />
+        <div className="hero-container relative z-20">
+          <div className="max-w-content-narrow">
+            <p className="text-body-tiny text-white font-normal uppercase tracking-widest mb-element-gap-small">
+              The Leading Global Expert Firm
+            </p>
+            <h1 className="text-hero font-light text-white leading-tight mb-card-padding-small">
+              When it's all at stake
+            </h1>
+            <p className="text-body-large text-white font-light leading-loose mb-content-gap max-w-content-narrow">
+              When facing your greatest challenges and opportunities, we are recognized as the #1 experts: 
+              the leading global expert firm for organizations facing crisis and transformation.
+            </p>
+            <ButtonPrimary href="#services">
+              Lead with Expertise
+            </ButtonPrimary>
+          </div>
+        </div>
+      </section>
+
+
+      {/* About Us Section */}
+      <Section spacing="large" background="brand-secondary" className="-mt-px">
+        <Container maxWidth="narrow" className="text-center px-8 md:px-12 lg:px-80">
+          
+          <p className="text-body-large text-white font-light leading-loose mb-content-gap">
+            We are the leading global expert firm helping organizations navigate crisis and transformation with
+            clarity, speed and confidence. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod illum maxime similique explicabo repellendus odio nisi repudiandae, perferendis amet eos quos numquam temporibus animi. Tenetur culpa ea magnam accusamus error.
+          </p>
+          <LinkUnderlineAccent href="#about-iba" className="inline-flex items-center gap-2">
+            About us
+            <span className="text-lg">→</span>
+          </LinkUnderlineAccent>
+        </Container>
+      </Section>
+
+      {/* Our Impact Section */}
+      <Section spacing="large" background="white">
+        <Container>
+          <div className="text-center mb-section-small">
+            <SectionHeading className="mb-card-padding-small">Our Impact</SectionHeading>
+            <p className="text-body text-text-secondary max-w-content-medium mx-auto">
+              A snapshot of our presence and outcomes.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-grid items-start text-center lg:divide-x lg:divide-border">
+            {/* Stat 1 */}
+            <div className="px-6">
+              <ImpactNumber className="text-brand-accent">30+</ImpactNumber>
+              <p className="text-brand-subtitle text-text-primary mt-element-gap-small">years in India,</p>
+              <p className="text-body-small text-text-secondary">opening our first office in Mumbai in 1992</p>
+            </div>
+
+            {/* Stat 2 */}
+            <div className="px-6">
+              <ImpactNumber className="text-brand-accent">900+</ImpactNumber>
+              <p className="text-brand-subtitle text-text-primary mt-element-gap-small">engagements</p>
+              <p className="text-body-small text-text-secondary">completed since 2017</p>
+            </div>
+
+            {/* Stat 3 */}
+            <div className="px-6">
+              <ImpactNumber className="text-brand-accent">850+</ImpactNumber>
+              <p className="text-brand-subtitle text-text-primary mt-element-gap-small">partners and consultants</p>
+              <p className="text-body-small text-text-secondary">across four locations</p>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Core Services Section */}
+      <Section spacing="large" background="white" className="section-split-gradient">
+        <Container>
+          <div className="text-center mb-section-small">
+            <SectionHeading className="mb-element-gap-small">
+              Core Services
+            </SectionHeading>
+            <p className="text-brand-subtitle font-normal max-w-content-medium mx-auto text-text-secondary">
+              Explore how we help organizations across critical challenges.
+            </p>
+          </div>
+
+          <Grid columns={3} gap="normal">
+            <ImageCard 
+              image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
+              imageAlt="Data Centers"
+            >
+              <CardLabel className="mb-text-gap"><span className="text-brand-accent-text">Data Centers</span></CardLabel>
+              <CardTitle className="mb-text-gap">
+                Solving tomorrow's data center demands
+              </CardTitle>
+              <CardText>
+                As AI, cloud expansion and sustainability targets converge, data center providers and investors face the challenge of delivering more capacity.
+              </CardText>
+            </ImageCard>
+
+            <ImageCard 
+              image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+              imageAlt="PE Value Creation Index"
+            >
+              <CardLabel className="mb-text-gap"><span className="text-brand-accent-text">PE Value Creation Index</span></CardLabel>
+              <CardTitle className="mb-text-gap">
+                PE firms face a more challenging path to returns
+              </CardTitle>
+              <CardText>
+                A survey of 500+ global PE leaders reveals which levers firms trust most, where execution gaps persist and why today's playbook must evolve.
+              </CardText>
+            </ImageCard>
+
+            <ImageCard 
+              image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80"
+              imageAlt="Corporate Sustainability"
+            >
+              <CardLabel className="mb-text-gap"><span className="text-brand-accent-text">Corporate Sustainability</span></CardLabel>
+              <CardTitle className="mb-text-gap">
+                Sustainable impact through expertise
+              </CardTitle>
+              <CardText>
+                In 2024, IBA Consulting continued to advance our climate goals, invest in our talent and make a sustainable impact in the communities we serve.
+              </CardText>
+            </ImageCard>
+          </Grid>
+        </Container>
+      </Section>
+
+
+      {/* Feature Block*/}
+      <Section spacing="large" background="brand-primary-gradient" className="-mt-px">
+        <Container maxWidth="narrow" className="text-center">
+
+          <h2 className="text-feature-heading font-light text-white leading-snug mb-card-padding-small">
+            True expertise is<br />delivering confidence
+          </h2>
+          <p className="text-body-large text-white font-light leading-loose mb-content-gap">
+            See how we deliver confidence for decision-makers across the built environment — 
+            from strategy to execution to dispute resolution. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nihil quis magni, eveniet officia esse blanditiis. Blanditiis at atque ipsum fuga, explicabo consectetur. Modi, mollitia commodi tempore hic rem recusandae!
+          </p>
+          <LinkUnderlineAccent href="#construction" className="inline-flex items-center gap-2">
+            Other Services
+            <span className="text-lg">→</span>
+          </LinkUnderlineAccent>
+        </Container>
+      </Section>
+
+
+
+      {/* Industries Section */}
+      <Section spacing="large" background="white">
+        <Container>
+          <div className="text-center mb-section-small">
+            <SectionHeading className="mb-text-gap">Industries</SectionHeading>
+            <p className="text-body text-text-secondary max-w-content-narrow mx-auto">
+              We partner with organizations across sectors to deliver measurable outcomes.
+            </p>
+        </div>
+
+          <Grid columns={3} gap="large">
+            <ArticleCard 
+              image="https://images.unsplash.com/photo-1519494080410-f9aa76cb4283?w=800&q=80"
+              imageAlt="Healthcare"
+            >
+              <ArticleLabel className="text-brand-accent-text mb-text-gap">Industry</ArticleLabel>
+              <ArticleTitle className="mb-text-gap group-hover:opacity-70 transition-opacity">
+                Healthcare
+              </ArticleTitle>
+              <BodyTextSmall>
+                Supporting providers, payers and pharma with transformation and resilience.
+              </BodyTextSmall>
+            </ArticleCard>
+
+            <ArticleCard 
+              image="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=800&q=80"
+              imageAlt="Energy & Utilities"
+            >
+              <ArticleLabel className="text-brand-accent-text mb-text-gap">Industry</ArticleLabel>
+              <ArticleTitle className="mb-text-gap group-hover:opacity-70 transition-opacity">
+                Energy & Utilities
+              </ArticleTitle>
+              <BodyTextSmall>
+                Enabling reliable growth through capital planning and operational excellence.
+              </BodyTextSmall>
+            </ArticleCard>
+
+            <ArticleCard 
+              image="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=800&q=80"
+              imageAlt="Financial Services"
+            >
+              <ArticleLabel className="text-brand-accent-text mb-text-gap">Industry</ArticleLabel>
+              <ArticleTitle className="mb-text-gap group-hover:opacity-70 transition-opacity">
+                Financial Services
+              </ArticleTitle>
+              <BodyTextSmall>
+                Advising banks, insurers and PE on risk, growth and value creation.
+              </BodyTextSmall>
+            </ArticleCard>
+          </Grid>
+
+          <div className="mt-section-small text-center">
+            <LinkUnderlineBlackAccent href="#industries" className="inline-flex items-center gap-2">
+            All Industries
+            <span className="text-lg">→</span>
+            </LinkUnderlineBlackAccent>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Insights Section */}
+      <Section spacing="large" background="light">
+        <Container>
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-section-small">
+            <SectionHeading className="mb-4 lg:mb-0 relative inline-block">
+              Insights
+              <span className="absolute left-0 w-full bg-brand-accent" style={{ bottom: '-8px', height: '4px' }}></span>
+            </SectionHeading>
+            <LinkUnderlineBlackAccent href="#insights" className="inline-flex items-center gap-2">
+              View All Insights
+              <span className="text-lg">→</span>
+            </LinkUnderlineBlackAccent>
+          </div>
+
+          <Grid columns={3} gap="large">
+            <InsightCard 
+              image="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&q=80"
+              imageAlt="Know Your Risk"
+              label="Article"
+              title="Know Your Risk: Terrorist Designation of Cartels on Business Interests in Mexico"
+              excerpt="Why businesses with operations related to Mexico should care about risks from potential FTO designations of Mexican cartels."
+              href="#insight-1"
+            />
+
+            <InsightCard 
+              image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
+              imageAlt="High Stakes, Higher Returns"
+              label="Article"
+              title="High Stakes, Higher Returns: Carve-Outs for Private Equity"
+              excerpt="Explore how carve-outs offer private equity firms opportunities for growth and value creation."
+              href="#insight-2"
+            />
+
+            <InsightCard 
+              image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80"
+              imageAlt="Current Power Trends"
+              label="Article"
+              title="Current Power Trends and Implications for the Data Center Industry"
+              excerpt="The data center industry, driven by AI, is evolving rapidly and requires new power strategies."
+              href="#insight-3"
+            />
+          </Grid>
+        </Container>
+      </Section>
+
+
+
+      {/* Careers Section */}
+      <section className="relative h-[500px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=2400&q=90"
+            alt="Team collaboration"
+            fill
+            className="object-cover"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+        <div className="absolute inset-0 hero-gradient-overlay z-10" />
+        <Container className="relative z-20 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-feature-heading font-light text-white leading-snug mb-content-gap">
+              Need expert help? Contact our team today.
+            </h2>
+            <ButtonPrimary href="#contact">
+              Contact us
+            </ButtonPrimary>
     </div>
+        </Container>
+      </section>
+
+
+
+      
+    </>
   );
 }

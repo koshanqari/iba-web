@@ -1,26 +1,196 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #212121;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container-custom {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+/* Hero container - left aligned */
+.hero-container {
+  max-width: 1440px;
+  padding: 0 80px;
+}
+
+@media (max-width: 1023px) {
+  .container-custom {
+    padding: 0 60px;
+  }
+  .hero-container {
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container-custom {
+    padding: 0 40px;
+  }
+  .hero-container {
+    padding: 0 40px;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Hero gradient overlay */
+.hero-gradient-overlay {
+  background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+}
+
+/* Button styles to match original */
+.btn-primary {
+  display: inline-block;
+  padding: 14px 32px;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background: #fff;
+  color: #212121;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 14px 32px;
+  border: 2px solid #212121;
+  color: #212121;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #212121;
+  color: #fff;
+}
+
+/* Link underline style for feature blocks */
+.link-underline-white {
+  display: inline-block;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 4px;
+  transition: opacity 0.3s;
+}
+
+.link-underline-white:hover {
+  opacity: 0.8;
+}
+
+.link-underline-dark {
+  display: inline-block;
+  color: #212121;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #212121;
+  padding-bottom: 4px;
+  transition: opacity 0.3s;
+}
+
+.link-underline-dark:hover {
+  opacity: 0.7;
+}
+
+/* Link underline style with accent border on dark bg */
+.link-underline-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff; /* keep text white */
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #d32f2f; /* brand-accent */
+  padding-bottom: 4px;
+  transition: opacity 0.3s;
+}
+
+.link-underline-accent:hover {
+  opacity: 0.85;
+}
+
+/* Split section background: white top, brand gradient bottom half */
+.section-split-gradient {
+  /* Use brand primary gradient but only cover bottom half, overlap by 1px to avoid seams */
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: 100% calc(50% + 1px);
+  background-position: bottom;
+}
+
+/* Apply Tailwind gradient via utility so it participates in JIT */
+@layer utilities {
+  .section-split-gradient {
+    @apply bg-brand-primary-gradient bg-no-repeat;
+  }
 }
