@@ -30,13 +30,13 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image
+        <Image
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&q=90"
             alt="Business skyline"
             fill
             className="object-cover"
-            priority
-          />
+          priority
+        />
         </div>
         <div className="absolute inset-0 hero-gradient-overlay z-10" />
         <div className="hero-container relative z-20">

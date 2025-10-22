@@ -2,12 +2,23 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showSticky, setShowSticky] = useState(false);
+  const pathname = usePathname();
+  
+  // Pages without hero sections should always show the sticky navbar
+  const pagesWithoutHero = ['/contact'];
+  const alwaysShowSticky = pagesWithoutHero.includes(pathname);
 
   useEffect(() => {
+    if (alwaysShowSticky) {
+      setShowSticky(true);
+      return;
+    }
+    
     const handleScroll = () => {
       const threshold = window.innerHeight - 72; // reveal after hero height (~header height offset)
       setShowSticky(window.scrollY > threshold);
@@ -15,7 +26,7 @@ export default function Header() {
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [alwaysShowSticky]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -58,29 +69,32 @@ export default function Header() {
             </button>
 
             <nav className="hidden lg:flex items-center" style={{ gap: '32px' }}>
-              <Link href="#services" className="text-[13px] font-semibold hover:opacity-80 transition-opacity" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="#services" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 SERVICES
               </Link>
-              <Link href="#industries" className="text-[13px] font-semibold hover:opacity-80 transition-opacity" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="#industries" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 INDUSTRIES
               </Link>
-              <Link href="#digital" className="text-[13px] font-semibold hover:opacity-80 transition-opacity" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="#digital" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 DIGITAL
               </Link>
-              <Link href="#insights" className="text-[13px] font-semibold hover:opacity-80 transition-opacity" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="#insights" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 INSIGHTS
               </Link>
-              <Link href="#our-experts" className="text-[13px] font-semibold hover:opacity-80 transition-opacity" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="#our-experts" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 OUR EXPERTS
               </Link>
-              <Link href="#locations" className="text-[13px] font-semibold hover:opacity-80 transition-opacity" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="#locations" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 LOCATIONS
               </Link>
-              <Link href="#careers" className="text-[13px] font-semibold hover:opacity-80 transition-opacity" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="#careers" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 CAREERS
               </Link>
-              <Link href="/about" className="text-[13px] font-semibold hover:opacity-80 transition-opacity" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="/about" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 ABOUT IBA
+              </Link>
+              <Link href="/contact" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+                CONTACT
               </Link>
             </nav>
           </div>
@@ -99,11 +113,12 @@ export default function Header() {
                     { label: 'LOCATIONS', href: '#locations' },
                     { label: 'CAREERS', href: '#careers' },
                     { label: 'ABOUT IBA', href: '/about' },
+                    { label: 'CONTACT', href: '/contact' },
                   ].map((item) => (
                     <Link
                       key={item.label}
                       href={item.href}
-                      className="text-base font-semibold text-text-primary py-4 px-6 border-b border-border hover:bg-background"
+                      className="text-base font-semibold text-text-primary py-4 px-6 border-b border-border hover:bg-background hover:text-brand-accent transition-colors"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.label}
