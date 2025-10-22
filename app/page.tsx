@@ -23,8 +23,11 @@ import {
   ArticleCard,
   InsightCard,
 } from '@/components/ui';
+import { getFeaturedInsights } from '@/data/insights';
+import Link from 'next/link';
 
 export default function HomePage() {
+  const featuredInsights = getFeaturedInsights();
   return (
     <>
       {/* Hero Section */}
@@ -42,17 +45,17 @@ export default function HomePage() {
         <div className="hero-container relative z-20">
           <div className="max-w-content-narrow">
             <p className="text-body-tiny text-white font-normal uppercase tracking-widest mb-element-gap-small">
-              The Leading Global Expert Firm
+              Transform Your Business
             </p>
             <h1 className="text-hero font-light text-white leading-tight mb-card-padding-small">
-              When it's all at stake
+              Strategic Excellence.<br />Delivered.
             </h1>
             <p className="text-body-large text-white font-light leading-loose mb-content-gap max-w-content-narrow">
-              When facing your greatest challenges and opportunities, we are recognized as the #1 experts: 
-              the leading global expert firm for organizations facing crisis and transformation.
+              Partner with industry-leading consultants to drive transformation, optimize operations, 
+              and achieve sustainable growth in today's dynamic business environment.
             </p>
-            <ButtonPrimary href="#services">
-              Lead with Expertise
+            <ButtonPrimary href="/contact">
+              Get Started
             </ButtonPrimary>
           </div>
         </div>
@@ -259,34 +262,43 @@ export default function HomePage() {
             </LinkUnderlineBlackAccent>
           </div>
 
-          <Grid columns={3} gap="large">
-            <InsightCard 
-              image="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&q=80"
-              imageAlt="Know Your Risk"
-              label="Article"
-              title="Know Your Risk: Terrorist Designation of Cartels on Business Interests in Mexico"
-              excerpt="Why businesses with operations related to Mexico should care about risks from potential FTO designations of Mexican cartels."
-              href="#insight-1"
-            />
-
-            <InsightCard 
-              image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
-              imageAlt="High Stakes, Higher Returns"
-              label="Article"
-              title="High Stakes, Higher Returns: Carve-Outs for Private Equity"
-              excerpt="Explore how carve-outs offer private equity firms opportunities for growth and value creation."
-              href="#insight-2"
-            />
-
-            <InsightCard 
-              image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80"
-              imageAlt="Current Power Trends"
-              label="Article"
-              title="Current Power Trends and Implications for the Data Center Industry"
-              excerpt="The data center industry, driven by AI, is evolving rapidly and requires new power strategies."
-              href="#insight-3"
-            />
-          </Grid>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredInsights.map((insight) => (
+              <Link 
+                key={insight.id} 
+                href={`/insights/${insight.id}`}
+                className="group bg-white transition-all duration-300 overflow-hidden hover:translate-y-[-4px] flex flex-col"
+              >
+                <div className="relative h-64 overflow-hidden flex-shrink-0">
+                  <Image
+                    src={insight.image}
+                    alt={insight.title}
+                    fill
+                    className="object-cover group-hover:opacity-90 transition-opacity duration-300"
+                  />
+                </div>
+                <div className="p-6 border-l border-r border-b border-border flex flex-col flex-grow">
+                  <ArticleLabel className="mb-text-gap">
+                    {insight.category}
+                  </ArticleLabel>
+                  <CardTitle className="mb-text-gap group-hover:text-brand-accent transition-colors line-clamp-2">
+                    {insight.title}
+                  </CardTitle>
+                  <BodyTextSmall className="text-text-secondary mb-card-padding-small leading-relaxed flex-grow line-clamp-3">
+                    {insight.excerpt}
+                  </BodyTextSmall>
+                  <div className="flex items-center justify-between pt-card-padding-small border-t border-border mt-auto">
+                    <BodyTextSmall className="text-text-muted">
+                      {insight.date}
+                    </BodyTextSmall>
+                    <BodyTextSmall className="text-text-muted">
+                      {insight.readTime}
+                    </BodyTextSmall>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </Container>
       </Section>
 

@@ -18,118 +18,12 @@ import {
   ArticleLabel,
   FeatureTitle,
 } from '@/components/ui';
+import { getAllInsights } from '@/data/insights';
 
 export default function InsightsPage() {
-  const insights = [
-    {
-      id: 1,
-      category: 'Healthcare',
-      title: 'The Future of Value-Based Care',
-      excerpt: 'How leading healthcare providers are transforming care delivery models to improve outcomes and reduce costs.',
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80',
-      readTime: '5 min read',
-      date: 'Dec 15, 2024'
-    },
-    {
-      id: 2,
-      category: 'Financial Services',
-      title: 'Digital Banking Transformation',
-      excerpt: 'Key strategies for traditional banks to compete effectively in the digital-first banking landscape.',
-      image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&q=80',
-      readTime: '7 min read',
-      date: 'Dec 12, 2024'
-    },
-    {
-      id: 3,
-      category: 'Energy & Utilities',
-      title: 'Accelerating the Energy Transition',
-      excerpt: 'How utilities are balancing grid reliability, affordability, and sustainability in the shift to clean energy.',
-      image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&q=80',
-      readTime: '6 min read',
-      date: 'Dec 10, 2024'
-    },
-    {
-      id: 4,
-      category: 'Manufacturing',
-      title: 'Industry 4.0 Implementation Guide',
-      excerpt: 'A comprehensive roadmap for manufacturers looking to adopt smart manufacturing technologies.',
-      image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&q=80',
-      readTime: '8 min read',
-      date: 'Dec 8, 2024'
-    },
-    {
-      id: 5,
-      category: 'Technology',
-      title: 'AI Integration in Enterprise Systems',
-      excerpt: 'Best practices for implementing artificial intelligence across enterprise technology stacks.',
-      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80',
-      readTime: '9 min read',
-      date: 'Dec 5, 2024'
-    },
-    {
-      id: 6,
-      category: 'Retail',
-      title: 'Omnichannel Customer Experience',
-      excerpt: 'Building seamless customer journeys across physical and digital touchpoints.',
-      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80',
-      readTime: '6 min read',
-      date: 'Dec 3, 2024'
-    },
-    {
-      id: 7,
-      category: 'Healthcare',
-      title: 'Telemedicine Best Practices',
-      excerpt: 'Optimizing virtual care delivery for improved patient satisfaction and clinical outcomes.',
-      image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80',
-      readTime: '5 min read',
-      date: 'Nov 30, 2024'
-    },
-    {
-      id: 8,
-      category: 'Financial Services',
-      title: 'RegTech Solutions for Compliance',
-      excerpt: 'Leveraging regulatory technology to streamline compliance processes and reduce operational risk.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
-      readTime: '7 min read',
-      date: 'Nov 28, 2024'
-    },
-    {
-      id: 9,
-      category: 'Energy & Utilities',
-      title: 'Smart Grid Cybersecurity',
-      excerpt: 'Protecting critical infrastructure from evolving cyber threats in the digital grid era.',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-      readTime: '6 min read',
-      date: 'Nov 25, 2024'
-    },
-    {
-      id: 10,
-      category: 'Manufacturing',
-      title: 'Supply Chain Resilience Strategies',
-      excerpt: 'Building robust supply chains that can adapt to global disruptions and market volatility.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80',
-      readTime: '8 min read',
-      date: 'Nov 22, 2024'
-    },
-    {
-      id: 11,
-      category: 'Technology',
-      title: 'Cloud Migration Best Practices',
-      excerpt: 'A strategic approach to moving enterprise workloads to the cloud while minimizing risk.',
-      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80',
-      readTime: '9 min read',
-      date: 'Nov 20, 2024'
-    },
-    {
-      id: 12,
-      category: 'Retail',
-      title: 'Personalization at Scale',
-      excerpt: 'Using data analytics and AI to deliver personalized experiences across all customer touchpoints.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
-      readTime: '6 min read',
-      date: 'Nov 18, 2024'
-    }
-  ];
+  const insights = getAllInsights().map(({ id, category, title, excerpt, image, readTime, date }) => ({
+    id, category, title, excerpt, image: image.replace('w=1200', 'w=800'), readTime, date
+  }));
 
   return (
     <>

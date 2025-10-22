@@ -75,6 +75,9 @@ export default function Header() {
               <Link href="/" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 HOME
               </Link>
+              <Link href="/about" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+                ABOUT US
+              </Link>
               <Link href="/services" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 SERVICES
               </Link>
@@ -83,9 +86,6 @@ export default function Header() {
               </Link>
               <Link href="/insights" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 INSIGHTS
-              </Link>
-              <Link href="/about" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
-                ABOUT US
               </Link>
               <Link href="/contact" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 CONTACT
@@ -102,10 +102,10 @@ export default function Header() {
             <nav className="flex flex-col">
               {[
                 { label: 'HOME', href: '/' },
+                { label: 'ABOUT US', href: '/about' },
                 { label: 'SERVICES', href: '/services' },
                 { label: 'INDUSTRIES', href: '/industries' },
                 { label: 'INSIGHTS', href: '/insights' },
-                { label: 'ABOUT US', href: '/about' },
                 { label: 'CONTACT', href: '/contact' },
               ].map((item) => (
                 <Link
