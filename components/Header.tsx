@@ -58,9 +58,12 @@ export default function Header() {
             </Link>
 
             <button
-              className="lg:hidden flex flex-col p-2"
+              className="lg:hidden flex flex-col p-2 z-50 relative"
               style={{ gap: '6px' }}
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              onClick={() => {
+                console.log('Menu clicked, current state:', mobileMenuOpen);
+                setMobileMenuOpen(!mobileMenuOpen);
+              }}
               aria-label="Toggle menu"
             >
               <span className={`w-6 transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} style={{ height: '2px', backgroundColor: showSticky ? '#212121' : '#fff' }} />
@@ -69,25 +72,25 @@ export default function Header() {
             </button>
 
             <nav className="hidden lg:flex items-center" style={{ gap: '32px' }}>
-              <Link href="#services" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="/#services" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 SERVICES
               </Link>
-              <Link href="#industries" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="/#industries" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 INDUSTRIES
               </Link>
-              <Link href="#digital" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="/#digital" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 DIGITAL
               </Link>
-              <Link href="#insights" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="/#insights" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 INSIGHTS
               </Link>
-              <Link href="#our-experts" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="/#our-experts" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 OUR EXPERTS
               </Link>
-              <Link href="#locations" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="/#locations" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 LOCATIONS
               </Link>
-              <Link href="#careers" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="/#careers" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 CAREERS
               </Link>
               <Link href="/about" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
@@ -98,38 +101,38 @@ export default function Header() {
               </Link>
             </nav>
           </div>
-
-          {/* Mobile Menu */}
-          {mobileMenuOpen && (
-            <div className="fixed inset-x-0 bottom-0 lg:hidden z-40" style={{ top: '72px' }}>
-              <div className="h-full bg-white overflow-y-auto">
-                <nav className="flex flex-col">
-                  {[
-                    { label: 'SERVICES', href: '#services' },
-                    { label: 'INDUSTRIES', href: '#industries' },
-                    { label: 'DIGITAL', href: '#digital' },
-                    { label: 'INSIGHTS', href: '#insights' },
-                    { label: 'OUR EXPERTS', href: '#our-experts' },
-                    { label: 'LOCATIONS', href: '#locations' },
-                    { label: 'CAREERS', href: '#careers' },
-                    { label: 'ABOUT IBA', href: '/about' },
-                    { label: 'CONTACT', href: '/contact' },
-                  ].map((item) => (
-                    <Link
-                      key={item.label}
-                      href={item.href}
-                      className="text-base font-semibold text-text-primary py-4 px-6 border-b border-border hover:bg-background hover:text-brand-accent transition-colors"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </nav>
-              </div>
-            </div>
-          )}
         </div>
       </header>
+
+      {/* Mobile Menu - moved outside header for better rendering */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 lg:hidden z-40" style={{ top: '72px' }}>
+          <div className="h-full bg-white overflow-y-auto">
+            <nav className="flex flex-col">
+              {[
+                { label: 'SERVICES', href: '/#services' },
+                { label: 'INDUSTRIES', href: '/#industries' },
+                { label: 'DIGITAL', href: '/#digital' },
+                { label: 'INSIGHTS', href: '/#insights' },
+                { label: 'OUR EXPERTS', href: '/#our-experts' },
+                { label: 'LOCATIONS', href: '/#locations' },
+                { label: 'CAREERS', href: '/#careers' },
+                { label: 'ABOUT IBA', href: '/about' },
+                { label: 'CONTACT', href: '/contact' },
+              ].map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="text-base font-semibold text-text-primary py-4 px-6 border-b border-border hover:bg-background hover:text-brand-accent transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </div>
+      )}
     </>
   );
 }
