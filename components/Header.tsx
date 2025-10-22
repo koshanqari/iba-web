@@ -78,7 +78,7 @@ export default function Header() {
               <Link href="/services" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 SERVICES
               </Link>
-              <Link href="/#industries" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="/industries" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 INDUSTRIES
               </Link>
               <Link href="/#insights" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
@@ -103,7 +103,7 @@ export default function Header() {
               {[
                 { label: 'HOME', href: '/' },
                 { label: 'SERVICES', href: '/services' },
-                { label: 'INDUSTRIES', href: '/#industries' },
+                { label: 'INDUSTRIES', href: '/industries' },
                 { label: 'INSIGHTS', href: '/#insights' },
                 { label: 'ABOUT US', href: '/about' },
                 { label: 'CONTACT', href: '/contact' },
