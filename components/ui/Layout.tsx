@@ -12,10 +12,12 @@ export function Section({
   className = '', 
   style,
   spacing = 'large',
-  background = 'white'
+  background = 'white',
+  id
 }: LayoutProps & { 
   spacing?: 'large' | 'medium' | 'small' | 'none';
   background?: 'white' | 'light' | 'brand-primary' | 'brand-secondary' | string;
+  id?: string;
 }) {
   const paddingClass = {
     'large': 'py-section-large',
@@ -33,7 +35,7 @@ export function Section({
   }[background] || '';
 
   return (
-    <section className={`${paddingClass} ${bgClass} ${className}`} style={style}>
+    <section id={id} className={`${paddingClass} ${bgClass} ${className}`} style={style}>
       {children}
     </section>
   );

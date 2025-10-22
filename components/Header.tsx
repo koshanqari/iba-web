@@ -79,7 +79,7 @@ export default function Header() {
               <Link href="#careers" className="text-[13px] font-semibold hover:opacity-80 transition-opacity" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 CAREERS
               </Link>
-              <Link href="#about-iba" className="text-[13px] font-semibold hover:opacity-80 transition-opacity" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="/about" className="text-[13px] font-semibold hover:opacity-80 transition-opacity" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 ABOUT IBA
               </Link>
             </nav>
@@ -90,14 +90,23 @@ export default function Header() {
             <div className="fixed inset-x-0 bottom-0 lg:hidden z-40" style={{ top: '72px' }}>
               <div className="h-full bg-white overflow-y-auto">
                 <nav className="flex flex-col">
-                  {['SERVICES', 'INDUSTRIES', 'DIGITAL', 'INSIGHTS', 'OUR EXPERTS', 'LOCATIONS', 'CAREERS', 'ABOUT IBA'].map((item) => (
+                  {[
+                    { label: 'SERVICES', href: '#services' },
+                    { label: 'INDUSTRIES', href: '#industries' },
+                    { label: 'DIGITAL', href: '#digital' },
+                    { label: 'INSIGHTS', href: '#insights' },
+                    { label: 'OUR EXPERTS', href: '#our-experts' },
+                    { label: 'LOCATIONS', href: '#locations' },
+                    { label: 'CAREERS', href: '#careers' },
+                    { label: 'ABOUT IBA', href: '/about' },
+                  ].map((item) => (
                     <Link
-                      key={item}
-                      href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                      key={item.label}
+                      href={item.href}
                       className="text-base font-semibold text-text-primary py-4 px-6 border-b border-border hover:bg-background"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      {item}
+                      {item.label}
                     </Link>
                   ))}
                 </nav>

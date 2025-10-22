@@ -51,11 +51,21 @@ html {
   padding: 0 80px;
 }
 
+/* Hero container - centered (for About page) */
+.hero-container-centered {
+  max-width: 1440px;
+  padding: 0 80px;
+  margin: 0 auto;
+}
+
 @media (max-width: 1023px) {
   .container-custom {
     padding: 0 60px;
   }
   .hero-container {
+    padding: 0 60px;
+  }
+  .hero-container-centered {
     padding: 0 60px;
   }
 }
@@ -65,6 +75,9 @@ html {
     padding: 0 40px;
   }
   .hero-container {
+    padding: 0 40px;
+  }
+  .hero-container-centered {
     padding: 0 40px;
   }
 }
@@ -192,5 +205,15 @@ html {
 @layer utilities {
   .section-split-gradient {
     @apply bg-brand-primary-gradient bg-no-repeat;
+  }
+  
+  /* Hide scrollbar for carousel */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
