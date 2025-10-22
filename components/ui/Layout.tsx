@@ -29,8 +29,10 @@ export function Section({
   const bgClass = {
     'white': 'bg-white',
     'light': 'bg-background',
+    'light-tertiary': 'bg-background-tertiary',
     'brand-primary': 'bg-brand-primary',
     'brand-secondary': 'bg-brand-secondary',
+    'brand-primary-dark': 'bg-brand-primary-dark',
     'brand-primary-gradient': 'bg-brand-primary-gradient',
   }[background] || '';
 

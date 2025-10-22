@@ -31,9 +31,10 @@ export default {
         'text-secondary': '#616161', // Body text, descriptions
         'text-muted': '#757575',     // Labels, meta info, placeholders
         
-        // UI colors
+        // UI colors - backgrounds
         'border': '#e0e0e0',         // Borders, dividers
-        'background': '#f5f5f5',     // Light backgrounds
+        'background': '#f5f5f5',     // Light grey backgrounds
+        'background-tertiary': '#e3f2fd', // Light blue backgrounds
       },
       
       fontSize: {

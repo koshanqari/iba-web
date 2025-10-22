@@ -72,29 +72,20 @@ export default function Header() {
             </button>
 
             <nav className="hidden lg:flex items-center" style={{ gap: '32px' }}>
-              <Link href="/#services" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+              <Link href="/" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
+                HOME
+              </Link>
+              <Link href="/services" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 SERVICES
               </Link>
               <Link href="/#industries" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 INDUSTRIES
               </Link>
-              <Link href="/#digital" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
-                DIGITAL
-              </Link>
               <Link href="/#insights" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 INSIGHTS
               </Link>
-              <Link href="/#our-experts" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
-                OUR EXPERTS
-              </Link>
-              <Link href="/#locations" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
-                LOCATIONS
-              </Link>
-              <Link href="/#careers" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
-                CAREERS
-              </Link>
               <Link href="/about" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
-                ABOUT IBA
+                ABOUT US
               </Link>
               <Link href="/contact" className="text-[13px] font-semibold transition-colors nav-link" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '0.5px', padding: '8px 0' }}>
                 CONTACT
@@ -110,14 +101,11 @@ export default function Header() {
           <div className="h-full bg-white overflow-y-auto">
             <nav className="flex flex-col">
               {[
-                { label: 'SERVICES', href: '/#services' },
+                { label: 'HOME', href: '/' },
+                { label: 'SERVICES', href: '/services' },
                 { label: 'INDUSTRIES', href: '/#industries' },
-                { label: 'DIGITAL', href: '/#digital' },
                 { label: 'INSIGHTS', href: '/#insights' },
-                { label: 'OUR EXPERTS', href: '/#our-experts' },
-                { label: 'LOCATIONS', href: '/#locations' },
-                { label: 'CAREERS', href: '/#careers' },
-                { label: 'ABOUT IBA', href: '/about' },
+                { label: 'ABOUT US', href: '/about' },
                 { label: 'CONTACT', href: '/contact' },
               ].map((item) => (
                 <Link
