@@ -43,6 +43,7 @@ export function ImageCard({
           alt={imageAlt}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-300"
+          loading="lazy"
         />
       </div>
       <div className="p-card-padding">
@@ -96,6 +97,7 @@ export function ArticleCard({
           alt={imageAlt}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-300"
+          loading="lazy"
         />
       </div>
       {children}
@@ -128,6 +130,7 @@ export function InsightCard({
         alt={imageAlt}
         fill
         className="object-cover group-hover:scale-105 transition-transform duration-300"
+        loading="lazy"
       />
       <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-black/35 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-card-padding">
