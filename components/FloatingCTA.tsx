@@ -8,11 +8,6 @@ export default function FloatingCTA() {
   const [isVisible, setIsVisible] = useState(false);
   const pathname = usePathname();
 
-  // Don't show on contact page
-  if (pathname === '/contact') {
-    return null;
-  }
-
   useEffect(() => {
     const toggleVisibility = () => {
       // Show button after scrolling down 300px
@@ -27,6 +22,11 @@ export default function FloatingCTA() {
 
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
+
+  // Don't show on contact page
+  if (pathname === '/contact') {
+    return null;
+  }
 
   return (
     <Link

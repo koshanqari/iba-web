@@ -70,7 +70,7 @@ export default function HomePage() {
             We are the leading global expert firm helping organizations navigate crisis and transformation with
             clarity, speed and confidence. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod illum maxime similique explicabo repellendus odio nisi repudiandae, perferendis amet eos quos numquam temporibus animi. Tenetur culpa ea magnam accusamus error.
           </p>
-          <LinkUnderlineAccent href="#about-iba" className="inline-flex items-center gap-2">
+          <LinkUnderlineAccent href="/about" className="inline-flex items-center gap-2">
             About us
             <span className="text-lg">→</span>
           </LinkUnderlineAccent>
@@ -179,7 +179,7 @@ export default function HomePage() {
             See how we deliver confidence for decision-makers across the built environment — 
             from strategy to execution to dispute resolution. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nihil quis magni, eveniet officia esse blanditiis. Blanditiis at atque ipsum fuga, explicabo consectetur. Modi, mollitia commodi tempore hic rem recusandae!
           </p>
-          <LinkUnderlineAccent href="#construction" className="inline-flex items-center gap-2">
+          <LinkUnderlineAccent href="/services" className="inline-flex items-center gap-2">
             Other Services
             <span className="text-lg">→</span>
           </LinkUnderlineAccent>
@@ -240,7 +240,7 @@ export default function HomePage() {
           </Grid>
 
           <div className="mt-section-small text-center">
-            <LinkUnderlineBlackAccent href="#industries" className="inline-flex items-center gap-2">
+            <LinkUnderlineBlackAccent href="/industries" className="inline-flex items-center gap-2">
             All Industries
             <span className="text-lg">→</span>
             </LinkUnderlineBlackAccent>
@@ -256,7 +256,7 @@ export default function HomePage() {
               Insights
               <span className="absolute left-0 w-full bg-brand-accent" style={{ bottom: '-8px', height: '4px' }}></span>
             </SectionHeading>
-            <LinkUnderlineBlackAccent href="#insights" className="inline-flex items-center gap-2">
+            <LinkUnderlineBlackAccent href="/insights" className="inline-flex items-center gap-2">
               View All Insights
               <span className="text-lg">→</span>
             </LinkUnderlineBlackAccent>
@@ -270,7 +270,7 @@ export default function HomePage() {
                 className="group bg-white transition-all duration-300 overflow-hidden hover:translate-y-[-4px] flex flex-col"
               >
                 <div className="relative h-64 overflow-hidden flex-shrink-0">
-                  <Image
+          <Image
                     src={insight.image}
                     alt={insight.title}
                     fill
@@ -321,7 +321,7 @@ export default function HomePage() {
             <h2 className="text-feature-heading font-light text-white leading-snug mb-content-gap">
               Need expert help? Contact our team today.
             </h2>
-            <ButtonPrimary href="#contact">
+            <ButtonPrimary href="/contact">
               Contact us
             </ButtonPrimary>
     </div>

@@ -67,7 +67,7 @@ export default function IndustriesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="order-1 lg:order-1">
               <CardLabel className="mb-text-gap">
-                <span className="text-brand-accent-text">01 / Healthcare</span>
+                <span className="text-brand-accent-text">01 / Health Care</span>
               </CardLabel>
               <BrandHeading className="text-white mb-card-padding-small">
                 Transforming Care Delivery
@@ -75,7 +75,7 @@ export default function IndustriesPage() {
               <div className="relative h-[300px] md:h-[400px] lg:hidden mb-content-gap">
                 <Image
                   src="https://images.unsplash.com/photo-1519494080410-f9aa76cb4283?w=1200&q=80"
-                  alt="Healthcare"
+                  alt="Health Care"
                   fill
                   className="object-cover"
                 />
@@ -119,7 +119,7 @@ export default function IndustriesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="order-1 lg:order-1">
               <CardLabel className="mb-text-gap">
-                <span className="text-brand-accent-text">02 / Financial Services</span>
+                <span className="text-brand-accent-text">02 / Financials</span>
               </CardLabel>
               <BrandHeading className="mb-card-padding-small">
                 Navigating Digital Disruption
@@ -127,7 +127,7 @@ export default function IndustriesPage() {
               <div className="relative h-[300px] md:h-[400px] lg:hidden mb-content-gap">
                 <Image
                   src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80"
-                  alt="Financial Services"
+                  alt="Financials"
                   fill
                   className="object-cover"
                 />
@@ -171,7 +171,7 @@ export default function IndustriesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="order-1 lg:order-1">
               <CardLabel className="mb-text-gap">
-                <span className="text-brand-accent-text">03 / Energy & Utilities</span>
+                <span className="text-brand-accent-text">03 / Utilities</span>
               </CardLabel>
               <BrandHeading className="text-white mb-card-padding-small">
                 Leading the Energy Transition
@@ -179,7 +179,7 @@ export default function IndustriesPage() {
               <div className="relative h-[300px] md:h-[400px] lg:hidden mb-content-gap">
                 <Image
                   src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&q=80"
-                  alt="Energy & Utilities"
+                  alt="Utilities"
                   fill
                   className="object-cover"
                 />
@@ -223,7 +223,7 @@ export default function IndustriesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="order-1 lg:order-1">
               <CardLabel className="mb-text-gap">
-                <span className="text-brand-accent-text">04 / Manufacturing</span>
+                <span className="text-brand-accent-text">04 / Industrials</span>
               </CardLabel>
               <BrandHeading className="mb-card-padding-small">
                 Driving Industry 4.0 Excellence
@@ -231,7 +231,7 @@ export default function IndustriesPage() {
               <div className="relative h-[300px] md:h-[400px] lg:hidden mb-content-gap">
                 <Image
                   src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1200&q=80"
-                  alt="Manufacturing"
+                  alt="Industrials"
                   fill
                   className="object-cover"
                 />
@@ -275,7 +275,7 @@ export default function IndustriesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="order-1 lg:order-1">
               <CardLabel className="mb-text-gap">
-                <span className="text-brand-accent-text">05 / Technology & Telecommunications</span>
+                <span className="text-brand-accent-text">05 / Information Technology</span>
               </CardLabel>
               <BrandHeading className="text-white mb-card-padding-small">
                 Scaling Innovation & Market Leadership
@@ -283,7 +283,7 @@ export default function IndustriesPage() {
               <div className="relative h-[300px] md:h-[400px] lg:hidden mb-content-gap">
                 <Image
                   src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80"
-                  alt="Technology & Telecommunications"
+                  alt="Information Technology"
                   fill
                   className="object-cover"
                 />
@@ -327,7 +327,7 @@ export default function IndustriesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="order-1 lg:order-1">
               <CardLabel className="mb-text-gap">
-                <span className="text-brand-accent-text">06 / Retail & Consumer Goods</span>
+                <span className="text-brand-accent-text">06 / Consumer Discretionary</span>
               </CardLabel>
               <BrandHeading className="mb-card-padding-small">
                 Adapting to the Digital Consumer
@@ -335,7 +335,7 @@ export default function IndustriesPage() {
               <div className="relative h-[300px] md:h-[400px] lg:hidden mb-content-gap">
                 <Image
                   src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80"
-                  alt="Retail & Consumer Goods"
+                  alt="Consumer Discretionary"
                   fill
                   className="object-cover"
                 />
@@ -414,7 +414,7 @@ export default function IndustriesPage() {
                   className="object-cover"
                 />
               </div>
-              <CardLabel className="text-brand-accent-text mb-text-gap">Healthcare</CardLabel>
+              <CardLabel className="text-brand-accent-text mb-text-gap">Health Care</CardLabel>
               <CardTitle className="mb-text-gap">
                 The Future of Value-Based Care
               </CardTitle>
@@ -432,7 +432,7 @@ export default function IndustriesPage() {
                   className="object-cover"
                 />
               </div>
-              <CardLabel className="text-brand-accent-text mb-text-gap">Financial Services</CardLabel>
+              <CardLabel className="text-brand-accent-text mb-text-gap">Financials</CardLabel>
               <CardTitle className="mb-text-gap">
                 Digital Banking Transformation
               </CardTitle>
@@ -450,7 +450,7 @@ export default function IndustriesPage() {
                   className="object-cover"
                 />
               </div>
-              <CardLabel className="text-brand-accent-text mb-text-gap">Energy & Utilities</CardLabel>
+              <CardLabel className="text-brand-accent-text mb-text-gap">Utilities</CardLabel>
               <CardTitle className="mb-text-gap">
                 Accelerating the Energy Transition
               </CardTitle>
