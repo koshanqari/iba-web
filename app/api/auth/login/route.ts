@@ -9,6 +9,15 @@ export async function POST(request: NextRequest) {
     const validUsername = process.env.INTELLSYS_USERNAME || 'iba.consulting';
     const validPassword = process.env.INTELLSYS_PASSWORD || 'intellsys';
 
+    // Debug logging (remove in production)
+    console.log('Login attempt:', { 
+      username, 
+      validUsername, 
+      passwordMatch: password === validPassword,
+      envUsername: process.env.INTELLSYS_USERNAME,
+      envPassword: process.env.INTELLSYS_PASSWORD ? '***' : 'undefined'
+    });
+
     if (username === validUsername && password === validPassword) {
       // Create a simple session token (in production, use JWT)
       const sessionToken = `intellsys_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
