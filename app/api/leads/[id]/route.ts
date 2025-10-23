@@ -66,8 +66,8 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
     await pool.end();
     return NextResponse.json(transformedLead);
   } catch (error) {
-    console.error(`Failed to update lead ${id}:`, error);
-    return NextResponse.json({ error: `Failed to update lead ${id}` }, { status: 500 });
+    console.error('Failed to update lead:', error);
+    return NextResponse.json({ error: 'Failed to update lead' }, { status: 500 });
   }
 }
 
@@ -100,7 +100,7 @@ export async function DELETE(request: NextRequest, { params }: { params: Promise
     await pool.end();
     return NextResponse.json({ success: true, id: result.rows[0].id });
   } catch (error) {
-    console.error(`Failed to delete lead ${id}:`, error);
-    return NextResponse.json({ error: `Failed to delete lead ${id}` }, { status: 500 });
+    console.error('Failed to delete lead:', error);
+    return NextResponse.json({ error: 'Failed to delete lead' }, { status: 500 });
   }
 }
