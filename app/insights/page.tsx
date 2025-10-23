@@ -58,7 +58,7 @@ export default function InsightsPage() {
       <section className="relative h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=2400&q=90"
+            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=2400&q=90"
             alt="Insights and thought leadership"
             fill
             className="object-cover"

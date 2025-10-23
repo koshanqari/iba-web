@@ -30,11 +30,52 @@ export default function ContactPage() {
   });
   
   const [phoneValue, setPhoneValue] = useState<string>();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: phoneValue || formData.phone,
+          designation: formData.designation,
+          company: formData.company,
+          message: formData.message,
+          lead_source: 'contact_page', // Set to contact_page for contact form submissions
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          designation: '',
+          company: '',
+          message: '',
+        });
+        setPhoneValue('');
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -158,12 +199,27 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="bg-brand-accent text-white px-8 py-4 hover:bg-opacity-90 transition-all text-button font-semibold uppercase tracking-wide"
-                >
-                  Send Message
-                </button>
+                <div className="space-y-4">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="bg-brand-accent text-white px-8 py-4 hover:bg-opacity-90 transition-all text-button font-semibold uppercase tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </button>
+                  
+                  {submitStatus === 'success' && (
+                    <p className="text-body-small text-green-600 font-medium">
+                      ✓ Message sent successfully! We'll get back to you within 24 hours.
+                    </p>
+                  )}
+                  
+                  {submitStatus === 'error' && (
+                    <p className="text-body-small text-red-600 font-medium">
+                      ✗ Failed to send message. Please try again or contact us directly.
+                    </p>
+                  )}
+                </div>
               </form>
             </div>
 

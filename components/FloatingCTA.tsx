@@ -10,12 +10,23 @@ export default function FloatingCTA() {
 
   useEffect(() => {
     const toggleVisibility = () => {
+      const scrollPosition = window.pageYOffset;
+      
       // Show button after scrolling down 300px
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
+      const shouldShow = scrollPosition > 300;
+      
+      // Hide button when footer starts appearing
+      const footer = document.querySelector('footer');
+      let footerVisible = false;
+      
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        // Footer is visible when its top edge is within the viewport
+        footerVisible = footerRect.top <= windowHeight;
       }
+      
+      setIsVisible(shouldShow && !footerVisible);
     };
 
     window.addEventListener('scroll', toggleVisibility);

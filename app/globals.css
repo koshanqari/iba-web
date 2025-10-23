@@ -115,12 +115,16 @@ html {
   display: inline-block;
   padding: 14px 32px;
   border: 2px solid #fff;
-  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff !important;
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 0;
 }
 
 .btn-primary:hover {
