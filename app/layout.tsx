@@ -21,6 +21,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&q=90"
+        />
+      </head>
       <body className={notoSans.className}>
         <ConditionalLayout>
           {children}
