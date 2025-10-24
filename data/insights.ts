@@ -7,7 +7,6 @@ export interface Insight {
   readTime: string;
   date: string;
   content: string;
-  featured?: boolean; // Set to true to show on homepage
 }
 
 export const insights: Insight[] = [
@@ -19,7 +18,6 @@ export const insights: Insight[] = [
     image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80',
     readTime: '5 min read',
     date: 'Dec 15, 2024',
-    featured: true, // This will show on homepage
     content: `
       <p>The healthcare industry is undergoing a fundamental transformation as providers shift from volume-based to value-based care models. This paradigm shift represents more than just a change in reimbursement structures—it's a complete reimagining of how healthcare is delivered, measured, and optimized.</p>
       
@@ -50,7 +48,6 @@ export const insights: Insight[] = [
     image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=1200&q=80',
     readTime: '7 min read',
     date: 'Dec 12, 2024',
-    featured: true, // This will show on homepage
     content: `
       <p>The financial services industry is experiencing unprecedented disruption as digital-native competitors challenge traditional banking models. Banks must transform their operations, technology infrastructure, and customer experience to remain competitive in an increasingly digital world.</p>
       
@@ -81,7 +78,6 @@ export const insights: Insight[] = [
     image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=1200&q=80',
     readTime: '6 min read',
     date: 'Dec 10, 2024',
-    featured: true, // This will show on homepage
     content: `
       <p>The energy sector is at a critical inflection point as utilities worldwide work to accelerate the transition to clean energy while maintaining grid reliability and affordability. This complex transformation requires balancing multiple competing priorities and stakeholder interests.</p>
       
@@ -112,7 +108,6 @@ export const insights: Insight[] = [
     image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1200&q=80',
     readTime: '8 min read',
     date: 'Dec 8, 2024',
-    featured: false,
     content: `
       <p>Industry 4.0 represents the fourth industrial revolution, characterized by the integration of digital technologies into manufacturing processes. This transformation enables manufacturers to create smart factories that are more efficient, flexible, and responsive to market demands.</p>
       
@@ -143,7 +138,6 @@ export const insights: Insight[] = [
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
     readTime: '9 min read',
     date: 'Dec 5, 2024',
-    featured: false,
     content: `
       <p>Artificial Intelligence is transforming enterprise operations across industries, offering unprecedented opportunities for automation, optimization, and innovation. However, successful AI integration requires careful planning, strategic implementation, and ongoing management.</p>
       
@@ -174,7 +168,6 @@ export const insights: Insight[] = [
     image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80',
     readTime: '6 min read',
     date: 'Dec 3, 2024',
-    featured: false,
     content: `
       <p>In today's retail landscape, customers expect seamless experiences across all channels—whether shopping online, in-store, or through mobile apps. Omnichannel retail strategies are essential for meeting these expectations and driving customer loyalty.</p>
       
@@ -205,7 +198,6 @@ export const insights: Insight[] = [
     image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=1200&q=80',
     readTime: '5 min read',
     date: 'Nov 30, 2024',
-    featured: false,
     content: `
       <p>Telemedicine has emerged as a critical component of modern healthcare delivery, offering patients convenient access to care while enabling providers to reach broader populations. Implementing effective telemedicine programs requires careful planning and adherence to best practices.</p>
       
@@ -236,7 +228,6 @@ export const insights: Insight[] = [
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
     readTime: '7 min read',
     date: 'Nov 28, 2024',
-    featured: false,
     content: `
       <p>Regulatory Technology (RegTech) is revolutionizing how financial institutions manage compliance, offering automated solutions that reduce costs, improve accuracy, and enhance regulatory reporting capabilities.</p>
       
@@ -267,7 +258,6 @@ export const insights: Insight[] = [
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80',
     readTime: '6 min read',
     date: 'Nov 25, 2024',
-    featured: false,
     content: `
       <p>As utilities modernize their grids with smart technologies, cybersecurity has become a critical concern. Protecting critical infrastructure from cyber threats requires comprehensive security strategies and ongoing vigilance.</p>
       
@@ -298,7 +288,6 @@ export const insights: Insight[] = [
     image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80',
     readTime: '8 min read',
     date: 'Nov 22, 2024',
-    featured: false,
     content: `
       <p>Global supply chains face unprecedented challenges from disruptions, geopolitical tensions, and market volatility. Building resilient supply chains requires strategic planning and proactive risk management.</p>
       
@@ -329,7 +318,6 @@ export const insights: Insight[] = [
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
     readTime: '9 min read',
     date: 'Nov 20, 2024',
-    featured: false,
     content: `
       <p>Cloud migration has become a strategic imperative for organizations seeking to modernize their IT infrastructure, improve scalability, and reduce costs. However, successful cloud migration requires careful planning and execution.</p>
       
@@ -360,7 +348,6 @@ export const insights: Insight[] = [
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80',
     readTime: '6 min read',
     date: 'Nov 18, 2024',
-    featured: false,
     content: `
       <p>Personalization has become a key differentiator in retail, with customers expecting tailored experiences across all touchpoints. Achieving personalization at scale requires sophisticated data analytics and AI capabilities.</p>
       
@@ -385,12 +372,26 @@ export const insights: Insight[] = [
   }
 ];
 
-// Get featured insights for homepage
-export const getFeaturedInsights = () => insights.filter(insight => insight.featured);
+// Page Configuration - Define which insights appear on which pages
+export const pageInsights = {
+  homepage: [1, 4, 6], // Insight IDs for homepage
+  services: [4, 3, 6], // Insight IDs for services page
+  industries: [1, 2, 3], // Insight IDs for industries page
+};
+
+// Get insights for a specific page
+export const getInsightsForPage = (pageName: keyof typeof pageInsights) => {
+  const insightIds = pageInsights[pageName] || [];
+  return insights.filter(insight => insightIds.includes(insight.id));
+};
 
 // Get all insights
 export const getAllInsights = () => insights;
 
 // Get insight by ID
 export const getInsightById = (id: number) => insights.find(insight => insight.id === id);
+
+// Get insights by category
+export const getInsightsByCategory = (category: string) => 
+  insights.filter(insight => insight.category === category);
 

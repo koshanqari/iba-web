@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   Section,
   Container,
@@ -17,9 +18,13 @@ import {
   HeroTitle,
   HeroDescription,
   ImpactNumber,
+  ArticleLabel,
 } from '@/components/ui';
+import { getInsightsForPage } from '@/data/insights';
 
 export default function ServicesPage() {
+  const serviceInsights = getInsightsForPage('services');
+  
   return (
     <>
       {/* Hero Section - full height with navbar overlay */}
@@ -30,6 +35,7 @@ export default function ServicesPage() {
             alt="Business strategy and consulting"
             fill
             className="object-cover"
+            sizes="100vw"
             priority
           />
         </div>
@@ -112,6 +118,7 @@ export default function ServicesPage() {
                 alt="Strategy and transformation"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -128,6 +135,7 @@ export default function ServicesPage() {
                 alt="Operations excellence"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             <div>
@@ -222,6 +230,7 @@ export default function ServicesPage() {
                 alt="Digital and technology"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -238,6 +247,7 @@ export default function ServicesPage() {
                 alt="Financial advisory"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             <div>
@@ -332,6 +342,7 @@ export default function ServicesPage() {
                 alt="Risk and compliance"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -348,6 +359,7 @@ export default function ServicesPage() {
                 alt="People and change management"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             <div>
@@ -439,59 +451,68 @@ export default function ServicesPage() {
             </BodyText>
           </div>
 
-          <Grid columns={3} gap="large">
-            <ImageCard 
-              image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
-              imageAlt="PE Value Creation"
-            >
-              <CardLabel className="mb-text-gap">
-                <span className="text-brand-accent-text">Insight</span>
-              </CardLabel>
-              <CardTitle className="mb-text-gap">
-                The Future of PE Value Creation
-              </CardTitle>
-              <CardText>
-                How leading private equity firms are evolving their playbook to drive returns in an uncertain market.
-              </CardText>
-            </ImageCard>
+          {serviceInsights.length > 0 ? (
+            <>
+              <Grid columns={3} gap="large">
+                {serviceInsights.map((insight) => (
+                  <Link 
+                    key={insight.id} 
+                    href={`/insights/${insight.id}`}
+                    className="group bg-white transition-all duration-300 overflow-hidden hover:translate-y-[-4px] flex flex-col"
+                  >
+                    <div className="relative h-64 overflow-hidden flex-shrink-0">
+                      <Image
+                        src={insight.image.replace('w=1200', 'w=800')}
+                        alt={insight.title}
+                        fill
+                        className="object-cover group-hover:opacity-90 transition-opacity duration-300"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    </div>
+                    <div className="p-6 border-l border-r border-b border-border flex flex-col flex-grow">
+                      <ArticleLabel className="mb-text-gap">
+                        {insight.category}
+                      </ArticleLabel>
+                      <CardTitle className="mb-text-gap group-hover:text-brand-accent transition-colors line-clamp-2">
+                        {insight.title}
+                      </CardTitle>
+                      <BodyTextSmall className="text-text-secondary mb-card-padding-small leading-relaxed flex-grow line-clamp-3">
+                        {insight.excerpt}
+                      </BodyTextSmall>
+                      <div className="flex items-center justify-between pt-card-padding-small border-t border-border mt-auto">
+                        <BodyTextSmall className="text-text-muted">
+                          {insight.date}
+                        </BodyTextSmall>
+                        <BodyTextSmall className="text-text-muted">
+                          {insight.readTime}
+                        </BodyTextSmall>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </Grid>
 
-            <ImageCard 
-              image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
-              imageAlt="Digital Transformation"
-            >
-              <CardLabel className="mb-text-gap">
-                <span className="text-brand-accent-text">Insight</span>
-              </CardLabel>
-              <CardTitle className="mb-text-gap">
-                Digital Transformation at Scale
-              </CardTitle>
-              <CardText>
-                Best practices for executing enterprise-wide digital transformations that deliver measurable impact.
-              </CardText>
-            </ImageCard>
-
-            <ImageCard 
-              image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
-              imageAlt="Operational Excellence"
-            >
-              <CardLabel className="mb-text-gap">
-                <span className="text-brand-accent-text">Insight</span>
-              </CardLabel>
-              <CardTitle className="mb-text-gap">
-                Operational Excellence in 2025
-              </CardTitle>
-              <CardText>
-                How organizations are leveraging automation and AI to achieve breakthrough operational performance.
-              </CardText>
-            </ImageCard>
-          </Grid>
-
-          <div className="mt-section-small text-center">
-            <LinkUnderlineBlackAccent href="/#insights" className="inline-flex items-center gap-2">
-              View All Insights
-              <span className="text-lg">→</span>
-            </LinkUnderlineBlackAccent>
-          </div>
+              <div className="mt-section-small text-center">
+                <LinkUnderlineBlackAccent href="/insights" className="inline-flex items-center gap-2">
+                  View All Insights
+                  <span className="text-lg">→</span>
+                </LinkUnderlineBlackAccent>
+              </div>
+            </>
+          ) : (
+            <div className="text-center py-16">
+              <SectionHeading className="mb-4">
+                No insights available
+              </SectionHeading>
+              <BodyText className="text-text-secondary mb-8">
+                We're working on adding service-related insights. Check back soon!
+              </BodyText>
+              <LinkUnderlineBlackAccent href="/insights" className="inline-flex items-center gap-2">
+                View All Insights
+                <span className="text-lg">→</span>
+              </LinkUnderlineBlackAccent>
+            </div>
+          )}
         </Container>
       </Section>
 
@@ -503,6 +524,7 @@ export default function ServicesPage() {
             alt="Contact us"
             fill
             className="object-cover"
+            sizes="100vw"
             loading="lazy"
           />
         </div>

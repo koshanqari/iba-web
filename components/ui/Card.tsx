@@ -43,6 +43,7 @@ export function ImageCard({
           alt={imageAlt}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-300"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           loading="lazy"
         />
       </div>
@@ -97,6 +98,7 @@ export function ArticleCard({
           alt={imageAlt}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-300"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           loading="lazy"
         />
       </div>
@@ -130,6 +132,7 @@ export function InsightCard({
         alt={imageAlt}
         fill
         className="object-cover group-hover:scale-105 transition-transform duration-300"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         loading="lazy"
       />
       <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-black/35 to-transparent" />

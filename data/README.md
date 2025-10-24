@@ -24,7 +24,6 @@ This is the single source of truth for all insight articles on the website.
   image: 'https://images.unsplash.com/photo-xxxxx?w=1200&q=80', // High-quality image URL
   readTime: '6 min read',
   date: 'Dec 20, 2024',
-  featured: false, // Set to true to show on homepage
   content: `
     <p>Your full article content in HTML format...</p>
     
@@ -39,17 +38,55 @@ This is the single source of truth for all insight articles on the website.
 }
 ```
 
-### How to Feature an Insight on the Homepage
+3. **Add the insight ID to the page configuration** (see below)
 
-1. Open `/data/insights.ts`
-2. Find the insight you want to feature
-3. Set `featured: true` in that insight object
-4. **Note**: Only the first 3 featured insights will appear on the homepage
+### Page Assignment System
+
+The `pageInsights` object controls which insights appear on which pages:
+
+```typescript
+export const pageInsights = {
+  homepage: [1, 4, 5], // Insight IDs for homepage
+  services: [4, 3, 6], // Insight IDs for services page  
+  industries: [1, 2, 3], // Insight IDs for industries page
+};
+```
+
+#### How to Control Page Assignments:
+
+**To show insight #7 on homepage:**
+```typescript
+pageInsights = {
+  homepage: [1, 4, 5, 7], // Add 7 to homepage array
+  services: [4, 3, 6],
+  industries: [1, 2, 3],
+};
+```
+
+**To move insight #4 from homepage to services only:**
+```typescript
+pageInsights = {
+  homepage: [1, 5], // Remove 4 from homepage
+  services: [4, 3, 6], // Keep 4 in services
+  industries: [1, 2, 3],
+};
+```
+
+**To show insight #8 on all pages:**
+```typescript
+pageInsights = {
+  homepage: [1, 4, 5, 8], // Add 8 to homepage
+  services: [4, 3, 6, 8], // Add 8 to services
+  industries: [1, 2, 3, 8], // Add 8 to industries
+};
+```
 
 ### Where Insights Appear
 
-- **Homepage (`/`)**: Shows up to 3 insights where `featured: true`
-- **Insights Page (`/insights`)**: Shows all insights in the array
+- **Homepage (`/`)**: Shows insights with IDs in `pageInsights.homepage`
+- **Services Page (`/services`)**: Shows insights with IDs in `pageInsights.services`
+- **Industries Page (`/industries`)**: Shows insights with IDs in `pageInsights.industries`
+- **Insights Page (`/insights`)**: Shows ALL insights (regardless of page assignment)
 - **Individual Insight Page (`/insights/[id]`)**: Shows the full content for a specific insight
 
 ### How to Edit an Existing Insight
@@ -63,24 +100,34 @@ This is the single source of truth for all insight articles on the website.
 
 1. Open `/data/insights.ts`
 2. Find and delete the entire object for that insight
-3. **Important**: Don't renumber the remaining IDs - leave them as they are to avoid breaking links
+3. **Important**: Remove the insight ID from all page arrays in `pageInsights`
+4. **Important**: Don't renumber the remaining IDs - leave them as they are to avoid breaking links
+
+### How to Move an Insight Between Pages
+
+1. Open `/data/insights.ts`
+2. Find the `pageInsights` object
+3. Update the arrays:
+   - To remove from homepage: Remove the ID from `homepage` array
+   - To add to services page: Add the ID to `services` array
+   - To show on multiple pages: Add the ID to multiple arrays
 
 ## Best Practices
 
 1. **Images**: Use high-quality images from Unsplash (1200px width minimum)
 2. **Excerpts**: Keep them concise (1-2 sentences)
 3. **Content**: Use proper HTML formatting with `<p>`, `<h3>`, `<ul>`, `<li>`, and `<strong>` tags
-4. **Featured Insights**: Only feature 3-6 insights maximum to keep the homepage manageable
+4. **Page Assignment**: Use the `pageInsights` object to control where insights appear
 5. **Categories**: Use consistent category names that match your industries (Healthcare, Financial Services, Energy & Utilities, Manufacturing, Technology, Retail)
 6. **Read Time**: Be honest about the estimated read time
 7. **Dates**: Use format "MMM DD, YYYY" (e.g., "Dec 15, 2024")
 
-## Example Workflow
+## Example Workflows
 
-### To add a new insight and feature it on the homepage:
+### To add a new insight and show it on homepage:
 
 ```typescript
-// In /data/insights.ts, add to the insights array:
+// 1. Add the insight to the insights array:
 {
   id: 13,
   category: 'Technology',
@@ -89,33 +136,46 @@ This is the single source of truth for all insight articles on the website.
   image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80',
   readTime: '7 min read',
   date: 'Dec 22, 2024',
-  featured: true, // This will show it on the homepage
-  content: `
-    <p>As cyber threats evolve, organizations must...</p>
-    <!-- Rest of your content -->
-  `
+  content: `<p>As cyber threats evolve...</p>`
 }
+
+// 2. Add it to the homepage in pageInsights:
+export const pageInsights = {
+  homepage: [1, 4, 5, 13], // Add 13 to homepage
+  services: [4, 3, 6],
+  industries: [1, 2, 3],
+};
 ```
 
-### To remove an insight from the homepage (but keep it on /insights):
+### To move an insight from homepage to services page only:
 
 ```typescript
-// Just change featured from true to false:
-{
-  id: 7,
-  category: 'Healthcare',
-  title: 'Telemedicine Best Practices',
-  // ... other fields
-  featured: false, // Changed from true to false
-  // ... rest of content
-}
+// Update the pageInsights object:
+export const pageInsights = {
+  homepage: [1, 5], // Remove 4 from homepage
+  services: [4, 3, 6], // Keep 4 in services
+  industries: [1, 2, 3],
+};
+```
+
+### To show an insight on all pages:
+
+```typescript
+// Add the ID to all page arrays:
+export const pageInsights = {
+  homepage: [1, 4, 5, 8], // Add 8 to homepage
+  services: [4, 3, 6, 8], // Add 8 to services
+  industries: [1, 2, 3, 8], // Add 8 to industries
+};
 ```
 
 ## Questions?
 
 This centralized system ensures:
-- ✅ Consistency across all pages
-- ✅ Easy content management
-- ✅ No duplicate data
-- ✅ Simple control over what appears on the homepage
+- ✅ **Consistency** across all pages
+- ✅ **Easy content management** from one location
+- ✅ **No duplicate data** - single source of truth
+- ✅ **Simple page assignment** - just add/remove insight IDs from arrays
+- ✅ **Scalable** - easy to add new pages or insights
+- ✅ **Clear and intuitive** - no complex configuration needed
 

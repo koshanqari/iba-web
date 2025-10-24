@@ -62,6 +62,7 @@ export default function InsightsPage() {
             alt="Insights and thought leadership"
             fill
             className="object-cover"
+            sizes="100vw"
             priority
           />
         </div>
@@ -195,6 +196,7 @@ export default function InsightsPage() {
                     alt={insight.title}
                     fill
                     className="object-cover group-hover:opacity-90 transition-opacity duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <div className="p-6 border-l border-r border-b border-border flex flex-col flex-grow">
@@ -248,6 +250,7 @@ export default function InsightsPage() {
             alt="Contact us"
             fill
             className="object-cover"
+            sizes="100vw"
             loading="lazy"
           />
         </div>

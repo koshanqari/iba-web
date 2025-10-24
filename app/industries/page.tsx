@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   Section,
   Container,
@@ -15,9 +16,13 @@ import {
   HeroSuper,
   HeroTitle,
   HeroDescription,
+  ArticleLabel,
 } from '@/components/ui';
+import { getInsightsForPage } from '@/data/insights';
 
 export default function IndustriesPage() {
+  const industryInsights = getInsightsForPage('industries');
+  
   return (
     <>
       {/* Hero Section - full height with navbar overlay */}
@@ -28,6 +33,7 @@ export default function IndustriesPage() {
             alt="Industries we serve"
             fill
             className="object-cover"
+            sizes="100vw"
             priority
           />
         </div>
@@ -78,6 +84,7 @@ export default function IndustriesPage() {
                   alt="Health Care"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
               <BodyText className="text-white leading-loose mb-content-gap">
@@ -107,6 +114,7 @@ export default function IndustriesPage() {
                 alt="Healthcare"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -130,6 +138,7 @@ export default function IndustriesPage() {
                   alt="Financials"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
               <BodyText className="text-text-secondary leading-loose mb-content-gap">
@@ -159,6 +168,7 @@ export default function IndustriesPage() {
                 alt="Financial Services"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -182,6 +192,7 @@ export default function IndustriesPage() {
                   alt="Utilities"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
               <BodyText className="text-white leading-loose mb-content-gap">
@@ -211,6 +222,7 @@ export default function IndustriesPage() {
                 alt="Energy & Utilities"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -234,6 +246,7 @@ export default function IndustriesPage() {
                   alt="Industrials"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
               <BodyText className="text-text-secondary leading-loose mb-content-gap">
@@ -263,6 +276,7 @@ export default function IndustriesPage() {
                 alt="Manufacturing"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -286,6 +300,7 @@ export default function IndustriesPage() {
                   alt="Information Technology"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
               <BodyText className="text-white leading-loose mb-content-gap">
@@ -315,6 +330,7 @@ export default function IndustriesPage() {
                 alt="Technology & Telecommunications"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -338,6 +354,7 @@ export default function IndustriesPage() {
                   alt="Consumer Discretionary"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
               <BodyText className="text-text-secondary leading-loose mb-content-gap">
@@ -367,6 +384,7 @@ export default function IndustriesPage() {
                 alt="Retail & Consumer Goods"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -404,68 +422,68 @@ export default function IndustriesPage() {
             </BodyText>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <div className="relative h-48 md:h-64 mb-card-padding-small">
-                <Image
-                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80"
-                  alt="Healthcare trends"
-                  fill
-                  className="object-cover"
-                />
+          {industryInsights.length > 0 ? (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {industryInsights.map((insight) => (
+                  <Link 
+                    key={insight.id} 
+                    href={`/insights/${insight.id}`}
+                    className="group bg-white transition-all duration-300 overflow-hidden hover:translate-y-[-4px] flex flex-col"
+                  >
+                    <div className="relative h-48 md:h-64 mb-card-padding-small">
+                      <Image
+                        src={insight.image.replace('w=1200', 'w=800')}
+                        alt={insight.title}
+                        fill
+                        className="object-cover group-hover:opacity-90 transition-opacity duration-300"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    </div>
+                    <div className="p-6 border-l border-r border-b border-border flex flex-col flex-grow">
+                      <ArticleLabel className="text-brand-accent-text mb-text-gap">
+                        {insight.category}
+                      </ArticleLabel>
+                      <CardTitle className="mb-text-gap group-hover:text-brand-accent transition-colors line-clamp-2">
+                        {insight.title}
+                      </CardTitle>
+                      <BodyTextSmall className="text-text-secondary leading-relaxed flex-grow line-clamp-3">
+                        {insight.excerpt}
+                      </BodyTextSmall>
+                      <div className="flex items-center justify-between pt-card-padding-small border-t border-border mt-auto">
+                        <BodyTextSmall className="text-text-muted">
+                          {insight.date}
+                        </BodyTextSmall>
+                        <BodyTextSmall className="text-text-muted">
+                          {insight.readTime}
+                        </BodyTextSmall>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
               </div>
-              <CardLabel className="text-brand-accent-text mb-text-gap">Health Care</CardLabel>
-              <CardTitle className="mb-text-gap">
-                The Future of Value-Based Care
-              </CardTitle>
-              <BodyTextSmall className="text-text-secondary">
-                How leading healthcare providers are transforming care delivery models to improve outcomes and reduce costs.
-              </BodyTextSmall>
-            </div>
 
-            <div>
-              <div className="relative h-48 md:h-64 mb-card-padding-small">
-                <Image
-                  src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&q=80"
-                  alt="Financial innovation"
-                  fill
-                  className="object-cover"
-                />
+              <div className="mt-section-small text-center">
+                <LinkUnderlineBlackAccent href="/insights" className="inline-flex items-center gap-2">
+                  View All Insights
+                  <span className="text-lg">→</span>
+                </LinkUnderlineBlackAccent>
               </div>
-              <CardLabel className="text-brand-accent-text mb-text-gap">Financials</CardLabel>
-              <CardTitle className="mb-text-gap">
-                Digital Banking Transformation
-              </CardTitle>
-              <BodyTextSmall className="text-text-secondary">
-                Key strategies for traditional banks to compete effectively in the digital-first banking landscape.
-              </BodyTextSmall>
+            </>
+          ) : (
+            <div className="text-center py-16">
+              <SectionHeading className="mb-4">
+                No insights available
+              </SectionHeading>
+              <BodyText className="text-text-secondary mb-8">
+                We're working on adding industry-specific insights. Check back soon!
+              </BodyText>
+              <LinkUnderlineBlackAccent href="/insights" className="inline-flex items-center gap-2">
+                View All Insights
+                <span className="text-lg">→</span>
+              </LinkUnderlineBlackAccent>
             </div>
-
-            <div>
-              <div className="relative h-48 md:h-64 mb-card-padding-small">
-                <Image
-                  src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&q=80"
-                  alt="Energy transition"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <CardLabel className="text-brand-accent-text mb-text-gap">Utilities</CardLabel>
-              <CardTitle className="mb-text-gap">
-                Accelerating the Energy Transition
-              </CardTitle>
-              <BodyTextSmall className="text-text-secondary">
-                How utilities are balancing grid reliability, affordability, and sustainability in the shift to clean energy.
-              </BodyTextSmall>
-            </div>
-          </div>
-
-          <div className="mt-section-small text-center">
-            <LinkUnderlineBlackAccent href="/#insights" className="inline-flex items-center gap-2">
-              View All Insights
-              <span className="text-lg">→</span>
-            </LinkUnderlineBlackAccent>
-          </div>
+          )}
         </Container>
       </Section>
 
@@ -477,6 +495,7 @@ export default function IndustriesPage() {
             alt="Contact us"
             fill
             className="object-cover"
+            sizes="100vw"
             loading="lazy"
           />
         </div>

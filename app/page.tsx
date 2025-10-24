@@ -23,11 +23,11 @@ import {
   ArticleCard,
   InsightCard,
 } from '@/components/ui';
-import { getFeaturedInsights } from '@/data/insights';
+import { getInsightsForPage } from '@/data/insights';
 import Link from 'next/link';
 
 export default function HomePage() {
-  const featuredInsights = getFeaturedInsights();
+  const featuredInsights = getInsightsForPage('homepage');
   return (
     <>
       {/* Hero Section */}
@@ -38,7 +38,8 @@ export default function HomePage() {
             alt="Business skyline"
             fill
             className="object-cover"
-          priority
+            sizes="100vw"
+            priority
         />
         </div>
         <div className="absolute inset-0 hero-gradient-overlay z-10" />
@@ -270,11 +271,12 @@ export default function HomePage() {
                 className="group bg-white transition-all duration-300 overflow-hidden hover:translate-y-[-4px] flex flex-col"
               >
                 <div className="relative h-64 overflow-hidden flex-shrink-0">
-          <Image
+                  <Image
                     src={insight.image}
                     alt={insight.title}
                     fill
                     className="object-cover group-hover:opacity-90 transition-opacity duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <div className="p-6 border-l border-r border-b border-border flex flex-col flex-grow">
@@ -312,6 +314,7 @@ export default function HomePage() {
             alt="Team collaboration"
             fill
             className="object-cover"
+            sizes="100vw"
             loading="lazy"
           />
         </div>
