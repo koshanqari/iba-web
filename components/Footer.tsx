@@ -138,46 +138,35 @@ export default function Footer() {
         {/* Partnership Section */}
         <div className="border-t border-white/20 pt-8 mt-8">
           <div className="w-full py-8 grid grid-flow-col gap-4 place-items-center place-content-between">
-            {/* Powered by */}
-            <div className="w-[80px] sm:w-[184px]">
-              <div className="text-[10px] sm:text-[16px] font-medium leading-[8px] text-white text-left mb-1">
-                Powered by
-              </div>
+            {/* Powered by Intellsys */}
+            <div className="w-[80px] sm:w-[250px]">
               <a href="https://www.intellsys.ai/" target="_blank" rel="noopener noreferrer">
                 <img 
-                  alt="Intellsys.ai" 
+                  alt="Powered by Intellsys" 
                   className="w-full" 
-                  src="https://cdn-sleepyhug-prod.b-cdn.net/media/intellsys-logo.webp"
+                  src="https://iba-consulting-prod.b-cdn.net/gj-logos/Intellsys3.png"
                 />
               </a>
             </div>
 
-            {/* Build with */}
-            <div className="w-[80px] sm:w-[184px]">
-              <div className="!text-[10px] sm:!text-[16px] font-medium leading-[8px] text-[#FFF] text-left mb-1">Build with</div>
-              <a href="https://www.growthjockey.com/" target="_blank">
+            {/* Build with Ottocloud */}
+            <div className="w-[80px] sm:w-[250px]">
+              <a href="https://www.ottocloud.com/" target="_blank" rel="noopener noreferrer">
                 <img 
-                  alt="" 
+                  alt="Build with Ottocloud" 
                   className="w-full" 
-                  src="https://golden-lotus-prod.b-cdn.net/components/ottocloud.webp" 
-                  style={{
-                    backgroundColor: 'transparent',
-                    mixBlendMode: 'screen'
-                  }}
+                  src="https://iba-consulting-prod.b-cdn.net/gj-logos/Ottocloud3.png"
                 />
               </a>
             </div>
 
-            {/* Ventured by */}
-            <div className="w-[80px] sm:w-[184px]">
-              <div className="text-[10px] sm:text-[16px] font-medium leading-[8px] text-white text-left mb-1">
-                Ventured by
-              </div>
+            {/* Ventured by GrowthJockey */}
+            <div className="w-[80px] sm:w-[250px]">
               <a href="https://www.growthjockey.com/" target="_blank" rel="noopener noreferrer">
                 <img 
-                  alt="GrowthJockey" 
+                  alt="Ventured by GrowthJockey" 
                   className="w-full" 
-                  src="https://cdn-sleepyhug-prod.b-cdn.net/media/growth-jockey-logo.webp"
+                  src="https://iba-consulting-prod.b-cdn.net/gj-logos/GrowthJockey3.png"
                 />
               </a>
             </div>
