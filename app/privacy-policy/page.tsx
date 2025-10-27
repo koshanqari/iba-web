@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
                 <strong>Last Updated:</strong> January 2025
               </BodyText>
               <BodyText className="text-text-secondary leading-loose">
-                IBA Consulting ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+                IBA Global ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
               </BodyText>
             </div>
 
@@ -228,7 +228,7 @@ export default function PrivacyPolicyPage() {
                   If you have any questions about this Privacy Policy or our data practices, please contact us at:
                 </BodyText>
                 <div className="mt-card-padding-small p-card-padding-small bg-background rounded-lg">
-                  <BodyTextSmall className="text-text-primary font-semibold">IBA Consulting</BodyTextSmall><br />
+                  <BodyTextSmall className="text-text-primary font-semibold">IBA Global</BodyTextSmall><br />
                   <BodyTextSmall className="text-text-secondary">Email: privacy@ibaconsulting.com</BodyTextSmall><br />
                   <BodyTextSmall className="text-text-secondary">Phone: +1 (555) 123-4567</BodyTextSmall><br />
                   <BodyTextSmall className="text-text-secondary">Address: 123 Business District, Suite 100, New York, NY 10001</BodyTextSmall>

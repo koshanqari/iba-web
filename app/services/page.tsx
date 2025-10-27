@@ -62,7 +62,7 @@ export default function ServicesPage() {
             Comprehensive Solutions for Complex Challenges
           </SectionHeading>
           <BodyText className="text-white font-light leading-loose">
-            IBA Consulting delivers world-class expertise across strategy, operations, technology, and transformation. 
+            IBA Global delivers world-class expertise across strategy, operations, technology, and transformation. 
             Our integrated approach combines deep industry knowledge with proven methodologies to help organizations 
             navigate their most critical business challenges and seize emerging opportunities.
           </BodyText>
@@ -409,7 +409,7 @@ export default function ServicesPage() {
       <Section spacing="large" background="brand-primary-dark">
         <Container maxWidth="medium" className="text-center">
           <SectionHeading className="text-white mb-card-padding-small">
-            Why Choose IBA Consulting
+            Why Choose IBA Global
           </SectionHeading>
           <BodyText className="text-white font-light leading-loose mb-section-small">
             Our integrated approach combines deep expertise with practical execution. We don't just advise—we 

@@ -54,7 +54,7 @@ export default function Header() {
         <div className="container-custom">
           <div className="flex items-center justify-between" style={{ height: '72px' }}>
             <Link href="/" className="text-2xl font-bold" style={{ color: showSticky ? '#212121' : '#fff', letterSpacing: '-0.5px' }}>
-              IBA Consulting
+              IBA Global
             </Link>
 
             <button

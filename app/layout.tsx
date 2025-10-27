@@ -10,8 +10,11 @@ const notoSans = Noto_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "IBA Consulting - Leading Global Expert Firm",
+  title: "IBA Global - Leading Global Expert Firm",
   description: "The leading global expert firm for organizations facing crisis and transformation",
+  icons: {
+    icon: '/icon.svg',
+  },
 };
 
 export default function RootLayout({

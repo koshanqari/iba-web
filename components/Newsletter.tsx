@@ -6,7 +6,7 @@ export default function Newsletter() {
           Stay Informed. Stay Inspired.
         </h2>
         <p className="text-[16px] font-normal" style={{ color: '#616161', marginBottom: '32px' }}>
-          Get the latest insights and analysis from IBA Consulting
+          Get the latest insights and analysis from IBA Global
         </p>
         <a href="#" className="btn-secondary">
           Subscribe

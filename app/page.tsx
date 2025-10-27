@@ -70,8 +70,11 @@ export default function HomePage() {
         <Container maxWidth="narrow" className="text-center px-8 md:px-12 lg:px-80">
           
           <p className="text-body-large text-white font-light leading-loose mb-content-gap">
+            <strong>IBA - International Business Advantage Global</strong><br /><br />
             We are the leading global expert firm helping organizations navigate crisis and transformation with
-            clarity, speed and confidence. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod illum maxime similique explicabo repellendus odio nisi repudiandae, perferendis amet eos quos numquam temporibus animi. Tenetur culpa ea magnam accusamus error.
+            clarity, speed and confidence. With over three decades of experience, we bring unparalleled expertise across industries, 
+            geographies, and disciplines to solve the most complex challenges facing businesses today. Our integrated approach 
+            combines deep industry knowledge with proven methodologies to deliver measurable results.
           </p>
           <LinkUnderlineAccent href="/about" className="inline-flex items-center gap-2">
             About us
@@ -163,7 +166,7 @@ export default function HomePage() {
                 Sustainable impact through expertise
               </CardTitle>
               <CardText>
-                In 2024, IBA Consulting continued to advance our climate goals, invest in our talent and make a sustainable impact in the communities we serve.
+                In 2024, IBA Global continued to advance our climate goals, invest in our talent and make a sustainable impact in the communities we serve.
               </CardText>
             </ImageCard>
           </Grid>
@@ -179,8 +182,10 @@ export default function HomePage() {
             True expertise is<br />delivering confidence
           </h2>
           <p className="text-body-large text-white font-light leading-loose mb-content-gap">
-            See how we deliver confidence for decision-makers across the built environment — 
-            from strategy to execution to dispute resolution. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nihil quis magni, eveniet officia esse blanditiis. Blanditiis at atque ipsum fuga, explicabo consectetur. Modi, mollitia commodi tempore hic rem recusandae!
+            See how we deliver confidence for decision-makers across industries — 
+            from strategy to execution to transformation. Our global team of experts combines analytical rigor 
+            with practical insights to help organizations make better decisions, execute more effectively, and 
+            achieve lasting results that drive sustainable growth.
           </p>
           <LinkUnderlineAccent href="/services" className="inline-flex items-center gap-2">
             Other Services

@@ -44,7 +44,7 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-white mb-4">Resources</h3>
             <ul className="space-y-3">
               <li><Link href="/insights" className="text-sm text-gray-300 hover:text-white transition-colors">Insights</Link></li>
-              <li><Link href="/about#leadership" className="text-sm text-gray-300 hover:text-white transition-colors">Leadership</Link></li>
+              <li><Link href="/about#people" className="text-sm text-gray-300 hover:text-white transition-colors">Leadership</Link></li>
               <li><Link href="/about#partnership" className="text-sm text-gray-300 hover:text-white transition-colors">Partnership</Link></li>
             </ul>
           </div>
@@ -64,7 +64,7 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
             {/* Copyright */}
             <p className="text-xs text-gray-400 max-w-2xl leading-relaxed">
-              © 2025 IBA Consulting, Inc., including its subsidiaries and affiliates, is a consulting firm 
+              © 2025 IBA Global, Inc., including its subsidiaries and affiliates, is a consulting firm 
               and is not a certified public accounting firm or a law firm. All Rights Reserved.
             </p>
 
@@ -151,7 +151,7 @@ export default function Footer() {
 
             {/* Build with Ottocloud */}
             <div className="w-[80px] sm:w-[250px]">
-              <a href="https://www.ottocloud.com/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.growthjockey.com/" target="_blank" rel="noopener noreferrer">
                 <img 
                   alt="Build with Ottocloud" 
                   className="w-full" 

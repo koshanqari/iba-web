@@ -38,7 +38,7 @@ export default function TermsOfUsePage() {
                 <strong>Last Updated:</strong> January 2025
               </BodyText>
               <BodyText className="text-text-secondary leading-loose">
-                These Terms of Use ("Terms") govern your use of the IBA Consulting website and services. By accessing or using our website, you agree to be bound by these Terms.
+                These Terms of Use ("Terms") govern your use of the IBA Global website and services. By accessing or using our website, you agree to be bound by these Terms.
               </BodyText>
             </div>
 
@@ -55,7 +55,7 @@ export default function TermsOfUsePage() {
               <div>
                 <SectionHeading className="mb-card-padding-small">Use License</SectionHeading>
                 <BodyText className="text-text-secondary leading-loose mb-card-padding-small">
-                  Permission is granted to temporarily download one copy of the materials on IBA Consulting's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+                  Permission is granted to temporarily download one copy of the materials on IBA Global's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
                 </BodyText>
                 <ul className="space-y-2 ml-6">
                   <li className="flex items-start">
@@ -81,7 +81,7 @@ export default function TermsOfUsePage() {
               <div>
                 <SectionHeading className="mb-card-padding-small">Disclaimer</SectionHeading>
                 <BodyText className="text-text-secondary leading-loose">
-                  The materials on IBA Consulting's website are provided on an 'as is' basis. IBA Consulting makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+                  The materials on IBA Global's website are provided on an 'as is' basis. IBA Global makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
                 </BodyText>
               </div>
 
@@ -89,7 +89,7 @@ export default function TermsOfUsePage() {
               <div>
                 <SectionHeading className="mb-card-padding-small">Limitations</SectionHeading>
                 <BodyText className="text-text-secondary leading-loose">
-                  In no event shall IBA Consulting or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on IBA Consulting's website, even if IBA Consulting or an authorized representative has been notified orally or in writing of the possibility of such damage.
+                  In no event shall IBA Global or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on IBA Global's website, even if IBA Global or an authorized representative has been notified orally or in writing of the possibility of such damage.
                 </BodyText>
               </div>
 
@@ -97,7 +97,7 @@ export default function TermsOfUsePage() {
               <div>
                 <SectionHeading className="mb-card-padding-small">Accuracy of Materials</SectionHeading>
                 <BodyText className="text-text-secondary leading-loose">
-                  The materials appearing on IBA Consulting's website could include technical, typographical, or photographic errors. IBA Consulting does not warrant that any of the materials on its website are accurate, complete, or current. IBA Consulting may make changes to the materials contained on its website at any time without notice.
+                  The materials appearing on IBA Global's website could include technical, typographical, or photographic errors. IBA Global does not warrant that any of the materials on its website are accurate, complete, or current. IBA Global may make changes to the materials contained on its website at any time without notice.
                 </BodyText>
               </div>
 
@@ -105,7 +105,7 @@ export default function TermsOfUsePage() {
               <div>
                 <SectionHeading className="mb-card-padding-small">Links</SectionHeading>
                 <BodyText className="text-text-secondary leading-loose">
-                  IBA Consulting has not reviewed all of the sites linked to our website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by IBA Consulting of the site. Use of any such linked website is at the user's own risk.
+                  IBA Global has not reviewed all of the sites linked to our website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by IBA Global of the site. Use of any such linked website is at the user's own risk.
                 </BodyText>
               </div>
 
@@ -113,7 +113,7 @@ export default function TermsOfUsePage() {
               <div>
                 <SectionHeading className="mb-card-padding-small">Modifications</SectionHeading>
                 <BodyText className="text-text-secondary leading-loose">
-                  IBA Consulting may revise these terms of service for its website at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service.
+                  IBA Global may revise these terms of service for its website at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service.
                 </BodyText>
               </div>
 
@@ -153,7 +153,7 @@ export default function TermsOfUsePage() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-brand-accent mr-2 mt-1">•</span>
-                    <BodyTextSmall className="text-text-secondary">Impersonate or attempt to impersonate IBA Consulting, an employee, another user, or any other person or entity</BodyTextSmall>
+                    <BodyTextSmall className="text-text-secondary">Impersonate or attempt to impersonate IBA Global, an employee, another user, or any other person or entity</BodyTextSmall>
                   </li>
                   <li className="flex items-start">
                     <span className="text-brand-accent mr-2 mt-1">•</span>
@@ -177,7 +177,7 @@ export default function TermsOfUsePage() {
                   If you have any questions about these Terms of Use, please contact us at:
                 </BodyText>
                 <div className="mt-card-padding-small p-card-padding-small bg-background rounded-lg">
-                  <BodyTextSmall className="text-text-primary font-semibold">IBA Consulting</BodyTextSmall><br />
+                  <BodyTextSmall className="text-text-primary font-semibold">IBA Global</BodyTextSmall><br />
                   <BodyTextSmall className="text-text-secondary">Email: legal@ibaconsulting.com</BodyTextSmall><br />
                   <BodyTextSmall className="text-text-secondary">Phone: +1 (555) 123-4567</BodyTextSmall><br />
                   <BodyTextSmall className="text-text-secondary">Address: 123 Business District, Suite 100, New York, NY 10001</BodyTextSmall>

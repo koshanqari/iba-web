@@ -115,7 +115,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=90"
-            alt="About IBA Consulting"
+            alt="About IBA Global"
             fill
             className="object-cover"
             priority
@@ -127,7 +127,7 @@ export default function AboutPage() {
         <div className="flex-1 flex items-center hero-container-centered relative z-20 px-6 md:px-0">
           <div className="max-w-content-medium">
             <p className="text-body-tiny text-white font-normal uppercase tracking-widest mb-element-gap-small">
-              About IBA Consulting
+              About IBA Global
             </p>
             <h1 className="text-4xl md:text-hero font-light text-white leading-tight mb-card-padding-small">
               Guiding organizations through their most critical moments
@@ -192,7 +192,7 @@ export default function AboutPage() {
           <div className="text-center mb-section-medium">
             <SectionHeading className="mb-card-padding-small">Who We Are</SectionHeading>
             <p className="text-body-large text-text-secondary leading-loose max-w-content-narrow mx-auto">
-              IBA Consulting is the leading global expert firm helping organizations navigate crisis and transformation 
+              IBA Global is the leading global expert firm helping organizations navigate crisis and transformation 
               with clarity, speed, and confidence. We bring unparalleled expertise across industries, geographies, and 
               disciplines to solve the most complex challenges facing businesses today.
             </p>
@@ -358,19 +358,19 @@ export default function AboutPage() {
               <div className="group cursor-pointer">
                 <div className="relative h-80 overflow-hidden mb-element-gap-small">
                   <Image
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80"
-                    alt="Leadership member"
+                    src="https://iba-consulting-prod.b-cdn.net/team-members/varun2.jpg"
+                    alt="Varun Kochhar"
                     fill
                     className="object-cover object-top transition-all duration-300"
                     loading="lazy"
                   />
                 </div>
-                <h4 className="text-card-title font-semibold text-text-primary mb-text-gap">Rajesh Kumar</h4>
+                <h4 className="text-card-title font-semibold text-text-primary mb-text-gap">Varun Kochhar</h4>
                 <p className="text-body-small text-brand-accent-text font-semibold mb-element-gap-small">
-                  Managing Partner
+                  Founder & CEO
                 </p>
                 <p className="text-body-small text-text-secondary leading-loose">
-                  25+ years of experience leading transformational change across Fortune 500 companies.
+                  Visionary leader with extensive experience driving organizational transformation and delivering exceptional results for clients across diverse industries.
                 </p>
               </div>
 
@@ -418,7 +418,7 @@ export default function AboutPage() {
           <div className="mb-section-medium">
             <h3 className="text-card-title font-semibold text-text-primary mb-element-gap">Life at IBA</h3>
             <p className="text-body-small text-text-secondary leading-loose mb-8 max-w-content-medium">
-              At IBA Consulting, we combine passion with purpose. Our culture is about building ventures, friendships, 
+              At IBA Global, we combine passion with purpose. Our culture is about building ventures, friendships, 
               and futures together. We thrive on curiosity, collaboration, and celebrating every win as one team.
             </p>
             
@@ -496,7 +496,7 @@ export default function AboutPage() {
             {/* Bain Alliance Ecosystem */}
             <div className="md:px-12">
               <div className="flex items-start gap-2 mb-4">
-                <h3 className="text-card-title font-semibold text-text-primary">Bain Alliance Ecosystem</h3>
+                <h3 className="text-card-title font-semibold text-text-primary">IBA Alliance Ecosystem</h3>
                 <span className="text-brand-accent text-xl font-bold">›</span>
               </div>
               <p className="text-body-small text-text-secondary leading-relaxed">
